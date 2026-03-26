@@ -5,7 +5,7 @@ inventario = []
 
 
 def menu():
-    print("\n--- MENÚ ---")
+    print("\n\===( MENU )===/")
     print("1. Agregar")
     print("2. Mostrar")
     print("3. Buscar")
@@ -14,7 +14,7 @@ def menu():
     print("6. Estadísticas")
     print("7. Guardar CSV")
     print("8. Cargar CSV")
-    print("9. Salir")
+    print("9. Salir\n")
 
 
 # -------- VALIDACIONES --------
@@ -30,12 +30,12 @@ def pedir_opcion():
 def pedir_precio(msg):
     dato = input(msg)
     while not dato.replace(".", "", 1).isdigit():
-        print("Debe ser un número")
+        print("Debe ser un número\n")
         dato = input(msg)
 
     valor = float(dato)
     while valor < 0:
-        print("No puede ser negativo")
+        print("No puede ser negativo\n")
         dato = input(msg)
         if dato.replace(".", "", 1).isdigit():
             valor = float(dato)
@@ -45,7 +45,7 @@ def pedir_precio(msg):
 def pedir_cantidad(msg):
     dato = input(msg)
     while not dato.isdigit():
-        print("Debe ser un número entero")
+        print("Debe ser un numero entero")
         dato = input(msg)
 
     valor = int(dato)
@@ -89,20 +89,20 @@ while opcion != "9":
                 if valor >= 0:
                     nuevo_precio = valor
                 else:
-                    print("Precio inválido")
+                    print("Precio inválido\n")
             else:
-                print("Precio inválido")
+                print("Precio inválido\n")
 
         if c:
             if c.isdigit():
                 nueva_cantidad = int(c)
             else:
-                print("Cantidad inválida")
+                print("Cantidad inválida\n")
 
         if actualizar_producto(inventario, nombre, nuevo_precio, nueva_cantidad):
             print("Producto actualizado")
         else:
-            print("Producto no encontrado")
+            print("Producto no encontrado\n")
 
     elif opcion == "5":
         nombre = input("Producto a eliminar: ")
@@ -144,7 +144,7 @@ while opcion != "9":
                         inventario.append(nuevo)
 
     elif opcion == "9":
-        print("Programa finalizado")
+        print("Programa finalizado\n")
 
     else:
-        print("Opción inválida")
+        print("Opción inválida\n")

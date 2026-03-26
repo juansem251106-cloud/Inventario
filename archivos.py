@@ -62,6 +62,6 @@ def cargar_csv(ruta):
     except FileNotFoundError:
         print("Archivo no encontrado")
     except Exception as e:
-        print("Error al cargar:", e)
+        print(f"Error al cargar: {repr(e)}")
 
     return []

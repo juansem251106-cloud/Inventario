@@ -1,3 +1,36 @@
+
+def pedir_opcion():
+    op = input("Opción (1-9): ")
+    while not (op.isdigit() and 1 <= int(op) <= 9):
+        print("\n(!) Opción inválida\n")
+        op = input("Opción (1-9): ")
+    return op
+
+
+def pedir_precio(msg):
+    dato = input(msg)
+    while not dato.replace(".", "", 1).isdigit():
+        print("\n(!) Ingrese un valor valido\n")
+        dato = input(msg)
+
+    valor = float(dato)
+    while valor < 0:
+        print("\n(!) No puede ser negativo\n")
+        dato = input(msg)
+        if dato.replace(".", "", 1).isdigit():
+            valor = float(dato)
+    return valor
+
+
+def pedir_cantidad(msg):
+    dato = input(msg)
+    while not dato.isdigit():
+        print("\n(!) Debe ser un numero entero\n")
+        dato = input(msg)
+
+    valor = int(dato)
+    return valor
+
 def agregar_producto(inv, nombre, precio, cantidad):
     inv.append({
         "nombre": nombre,
@@ -8,11 +41,11 @@ def agregar_producto(inv, nombre, precio, cantidad):
 
 def mostrar_inventario(inv):
     if not inv:
-        print("Inventario vacío")
+        print("\n(!) Inventario vacío\n")
         return
 
     for p in inv:
-        print(f"{p['nombre']} | Precio: {p['precio']} | Cantidad: {p['cantidad']}")
+        print(f"\n{p['nombre']} | Precio: {p['precio']} | Cantidad: {p['cantidad']}")
 
 
 def buscar_producto(inv, nombre):

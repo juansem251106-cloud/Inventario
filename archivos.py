@@ -4,7 +4,7 @@ import csv
 def guardar_csv(inv, ruta, incluir_header=True):
     try:
         if not inv:
-            print("Inventario vacío, no se guarda")
+            print("Inventario vacío, no se pudo guardar")
             return
 
         with open(ruta, "w", newline="", encoding="utf-8") as f:
@@ -16,7 +16,7 @@ def guardar_csv(inv, ruta, incluir_header=True):
             for p in inv:
                 writer.writerow([p["nombre"], p["precio"], p["cantidad"]])
 
-        print(f"Inventario guardado en: {ruta}")
+        print(f"Inventario fue guardado en: {ruta}")
 
     except Exception as e:
         print("Error al guardar:", e)

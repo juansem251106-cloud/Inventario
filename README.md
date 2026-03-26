@@ -1,3 +1,5 @@
+URL github: https://github.com/juansem251106-cloud/Inventario.git
+
 # Sistema de Inventario en Python
 
 ## Descripción
@@ -106,14 +108,6 @@ El sistema está preparado para evitar fallos inesperados:
 
 * Python 3
 * Módulo csv (manejo de archivos)
-
----
-
-## Notas
-
-* El programa utiliza un bucle `while` controlado por la opción de salida (9)
-* No se usa `while True`
-* El código está modularizado y documentado
 
 ---
 
